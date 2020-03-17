@@ -1,6 +1,6 @@
 #include "RTSPUnityPluginSingleton.h"
 #include "FFMpegRTSPStream.h"
-
+#pragma warning(disable : 4996)
 rtsp_unity_plugin::RTSPPluginSingleton rtsp_unity_plugin::RTSPPluginSingleton::m_instance = rtsp_unity_plugin::RTSPPluginSingleton();
 
 
@@ -60,6 +60,15 @@ rtsp_unity_plugin::RTSPPluginSingleton::~RTSPPluginSingleton()
 	if (m_pRenderApi!= NULL) {
 		delete m_pRenderApi;
 	}
+}
+
+void rtsp_unity_plugin::RTSPPluginSingleton::forceStop()
+{
+	if (m_pRenderApi != NULL) {
+		delete m_pRenderApi;
+	}
+	if (m_pStream != NULL)
+		delete m_pStream;
 }
 
 rtsp_unity_plugin::RTSPPluginSingleton& rtsp_unity_plugin::RTSPPluginSingleton::Instance()

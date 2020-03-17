@@ -23,8 +23,10 @@ namespace rtsp_unity_plugin {
 		RTSPPluginSingleton();
 		~RTSPPluginSingleton();
 
+
 	public:
 		static RTSPPluginSingleton& Instance();
+		void forceStop();
 
 		void InitAv();
 		void InitAvNetwork();

@@ -91,7 +91,8 @@ int rtsp_unity_plugin::FFMpegRTSPStream::CloseStream()
 		// Close the codecs
 		avcodec_close(m_pCodecCtx);
 		// free the format context
-		avformat_free_context(m_pFormatCtx);
+		//avformat_free_context(m_pFormatCtx);
+		avformat_close_input(&m_pFormatCtx);
 		m_isClosed = true;
 		return 0;
 	}

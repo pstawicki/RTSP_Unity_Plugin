@@ -124,3 +124,14 @@ extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API SetTextureAsRTSPSink(
 	//ffmpegClassPtr.SetDummySink(sink);
 	pluginSinglet.getStream()->setMediaSink(sink);
 }
+extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API forceStopExtern()
+{
+	//rtsp_unity_plugin::UnityTextureSink* sink = new rtsp_unity_plugin::UnityTextureSink(texture_handle, "texture", h, w);
+	//ffmpegClassPtr.SetDummySink(sink);
+	//pluginSinglet.getStream()->setMediaSink(sink);
+	
+	pluginSinglet.forceStop();
+
+	//delete rtsp_unity_plugin::RTSPPluginSingleton::Instance();
+	//rtsp_unity_plugin::RTSPPluginSingleton::~FFMpegRTSPStream()
+}
